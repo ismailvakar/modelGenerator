@@ -74,6 +74,7 @@ export class ModelGeneratorService {
     } else if (
       property === 'date' ||
       property === 'datetime2' ||
+      property === 'smalldatetime' ||
       property === 'datetime'
     ) {
       uniqueString =
@@ -120,6 +121,8 @@ export class ModelGeneratorService {
     const columnTables = await this.informationSchemaRepository.getColumns(
       tableName,
     );
+
+    console.log('columnTables', columnTables);
     const primaryColumn = await this.informationSchemaRepository.getPrimaryKey(
       tableName,
     );
