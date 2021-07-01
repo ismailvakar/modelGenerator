@@ -1,7 +1,7 @@
 import {inject} from '@loopback/core';
 import {DefaultCrudRepository} from '@loopback/repository';
 import {SecDsDataSource} from '../datasources';
-import {ColumnProperties} from '../interfaces/model.interface';
+import {ColumnProperty} from '../interfaces/model.interface';
 import {
   InformationSchemaTables,
   InformationSchemaTablesRelations,
@@ -47,7 +47,7 @@ export class InformationSchemaTablesRepository extends DefaultCrudRepository<
             left outer join INFORMATION_SCHEMA.KEY_COLUMN_USAGE kcu on c.COLUMN_NAME = kcu.COLUMN_NAME and c.TABLE_NAME = kcu.TABLE_NAME
     where c.TABLE_NAME = @param1`,
       [tableName],
-    )) as ColumnProperties[];
+    )) as ColumnProperty[];
     return tableInformation;
   }
 }
