@@ -1,0 +1,499 @@
+
+{
+  "header": {
+    "reportVersion": 2,
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20210701.113754.10304.0.001.json",
+    "dumpEventTime": "2021-07-01T11:37:54Z",
+    "dumpEventTimeStamp": "1625128674238",
+    "processId": 10304,
+    "threadId": null,
+    "cwd": "C:\\Users\\ismail.akar\\Desktop\\helper\\helper",
+    "commandLine": [
+      "node",
+      "-r",
+      "dotenv/config",
+      "-r",
+      "source-map-support/register",
+      "."
+    ],
+    "nodejsVersion": "v12.16.2",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "win32",
+    "componentVersions": {
+      "node": "12.16.2",
+      "v8": "7.8.279.23-node.34",
+      "uv": "1.34.2",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "72",
+      "nghttp2": "1.40.0",
+      "napi": "5",
+      "llhttp": "2.0.4",
+      "http_parser": "2.9.3",
+      "openssl": "1.1.1e",
+      "cldr": "36.0",
+      "icu": "65.1",
+      "tz": "2019c",
+      "unicode": "12.1"
+    },
+    "release": {
+      "name": "node",
+      "lts": "Erbium",
+      "headersUrl": "https://nodejs.org/download/release/v12.16.2/node-v12.16.2-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v12.16.2/node-v12.16.2.tar.gz",
+      "libUrl": "https://nodejs.org/download/release/v12.16.2/win-x64/node.lib"
+    },
+    "osName": "Windows_NT",
+    "osRelease": "10.0.19042",
+    "osVersion": "Windows 10 Pro",
+    "osMachine": "x86_64",
+    "cpus": [
+      {
+        "model": "Intel(R) Core(TM) i7-10510U CPU @ 1.80GHz",
+        "speed": 2304,
+        "user": 2836562,
+        "nice": 0,
+        "sys": 8784671,
+        "idle": 61361312,
+        "irq": 1929921
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-10510U CPU @ 1.80GHz",
+        "speed": 2304,
+        "user": 1882140,
+        "nice": 0,
+        "sys": 4977500,
+        "idle": 66122531,
+        "irq": 464765
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-10510U CPU @ 1.80GHz",
+        "speed": 2304,
+        "user": 4776359,
+        "nice": 0,
+        "sys": 7359953,
+        "idle": 60845859,
+        "irq": 443984
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-10510U CPU @ 1.80GHz",
+        "speed": 2304,
+        "user": 2798562,
+        "nice": 0,
+        "sys": 4787015,
+        "idle": 65396593,
+        "irq": 315843
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-10510U CPU @ 1.80GHz",
+        "speed": 2304,
+        "user": 4142968,
+        "nice": 0,
+        "sys": 7147781,
+        "idle": 61691421,
+        "irq": 493562
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-10510U CPU @ 1.80GHz",
+        "speed": 2304,
+        "user": 2217125,
+        "nice": 0,
+        "sys": 4914671,
+        "idle": 65850375,
+        "irq": 365203
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-10510U CPU @ 1.80GHz",
+        "speed": 2304,
+        "user": 3574468,
+        "nice": 0,
+        "sys": 6879734,
+        "idle": 62527968,
+        "irq": 492109
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-10510U CPU @ 1.80GHz",
+        "speed": 2304,
+        "user": 2890281,
+        "nice": 0,
+        "sys": 5027750,
+        "idle": 65064140,
+        "irq": 360500
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "name": "vEthernet (Default Switch)",
+        "internal": false,
+        "mac": "00:15:5d:6d:44:b4",
+        "address": "fe80::2c76:3729:cd0a:ed26",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 59
+      },
+      {
+        "name": "vEthernet (Default Switch)",
+        "internal": false,
+        "mac": "00:15:5d:6d:44:b4",
+        "address": "172.20.208.1",
+        "netmask": "255.255.240.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "Yerel Ağ Bağlantısı 2",
+        "internal": false,
+        "mac": "00:ff:ed:54:83:c0",
+        "address": "fe80::2087:962:6aae:ee53",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 28
+      },
+      {
+        "name": "Yerel Ağ Bağlantısı 2",
+        "internal": false,
+        "mac": "00:ff:ed:54:83:c0",
+        "address": "10.108.0.18",
+        "netmask": "255.255.255.252",
+        "family": "IPv4"
+      },
+      {
+        "name": "Wi-Fi",
+        "internal": false,
+        "mac": "38:68:93:f1:75:d4",
+        "address": "fe80::759c:93da:e116:389e",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 20
+      },
+      {
+        "name": "Wi-Fi",
+        "internal": false,
+        "mac": "38:68:93:f1:75:d4",
+        "address": "192.168.5.46",
+        "netmask": "255.255.255.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "Loopback Pseudo-Interface 1",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "::1",
+        "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "Loopback Pseudo-Interface 1",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "127.0.0.1",
+        "netmask": "255.0.0.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "vEthernet (WSL)",
+        "internal": false,
+        "mac": "00:15:5d:d2:57:ee",
+        "address": "fe80::cdad:58fd:e160:7a4e",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 70
+      },
+      {
+        "name": "vEthernet (WSL)",
+        "internal": false,
+        "mac": "00:15:5d:d2:57:ee",
+        "address": "172.25.48.1",
+        "netmask": "255.255.240.0",
+        "family": "IPv4"
+      }
+    ],
+    "host": "ATEZ018"
+  },
+  "javascriptStack": {
+    "message": "No stack.",
+    "stack": [
+      "Unavailable."
+    ]
+  },
+  "nativeStack": [
+    {
+      "pc": "0x00007ff6096e2309",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+11577"
+    },
+    {
+      "pc": "0x00007ff6096e6869",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+29337"
+    },
+    {
+      "pc": "0x00007ff6096e56e8",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+24856"
+    },
+    {
+      "pc": "0x00007ff60980dd82",
+      "symbol": "v8::base::CPU::has_sse+59378"
+    },
+    {
+      "pc": "0x00007ff60a02a27e",
+      "symbol": "v8::Isolate::ReportExternalAllocationLimitReached+94"
+    },
+    {
+      "pc": "0x00007ff60a012351",
+      "symbol": "v8::SharedArrayBuffer::Externalize+833"
+    },
+    {
+      "pc": "0x00007ff609ede8ac",
+      "symbol": "v8::internal::Heap::EphemeronKeyWriteBarrierFromCode+1436"
+    },
+    {
+      "pc": "0x00007ff609efb78b",
+      "symbol": "v8::internal::Factory::NewFixedArrayWithFiller+59"
+    },
+    {
+      "pc": "0x00007ff609efb741",
+      "symbol": "v8::internal::Factory::NewUninitializedFixedArray+65"
+    },
+    {
+      "pc": "0x00007ff609dd84ff",
+      "symbol": "v8::Message::GetIsolate+7631"
+    },
+    {
+      "pc": "0x00007ff609c889ca",
+      "symbol": "v8::internal::interpreter::JumpTableTargetOffsets::iterator::operator=+162938"
+    },
+    {
+      "pc": "0x00007ff60a47730d",
+      "symbol": "v8::internal::SetupIsolateDelegate::SetupHeap+546637"
+    },
+    {
+      "pc": "0x00000378c4caa29c",
+      "symbol": ""
+    }
+  ],
+  "javascriptHeap": {
+    "totalMemory": 978276352,
+    "totalCommittedMemory": 978276352,
+    "usedMemory": 942734200,
+    "availableMemory": 1251288600,
+    "memoryLimit": 2197815296,
+    "heapSpaces": {
+      "read_only_space": {
+        "memorySize": 262144,
+        "committedMemory": 262144,
+        "capacity": 32808,
+        "used": 32808,
+        "available": 0
+      },
+      "new_space": {
+        "memorySize": 33554432,
+        "committedMemory": 33554432,
+        "capacity": 16759296,
+        "used": 2316528,
+        "available": 14442768
+      },
+      "old_space": {
+        "memorySize": 28188672,
+        "committedMemory": 28188672,
+        "capacity": 26278848,
+        "used": 25731256,
+        "available": 547592
+      },
+      "code_space": {
+        "memorySize": 692224,
+        "committedMemory": 692224,
+        "capacity": 399808,
+        "used": 399808,
+        "available": 0
+      },
+      "map_space": {
+        "memorySize": 2363392,
+        "committedMemory": 2363392,
+        "capacity": 1158240,
+        "used": 1158240,
+        "available": 0
+      },
+      "large_object_space": {
+        "memorySize": 912592896,
+        "committedMemory": 912592896,
+        "capacity": 912551272,
+        "used": 912551272,
+        "available": 0
+      },
+      "code_large_object_space": {
+        "memorySize": 622592,
+        "committedMemory": 622592,
+        "capacity": 544288,
+        "used": 544288,
+        "available": 0
+      },
+      "new_large_object_space": {
+        "memorySize": 0,
+        "committedMemory": 0,
+        "capacity": 16759296,
+        "used": 0,
+        "available": 16759296
+      }
+    }
+  },
+  "resourceUsage": {
+    "userCpuSeconds": 190.296,
+    "kernelCpuSeconds": 2.5,
+    "cpuConsumptionPercent": 95.4436,
+    "maxRss": 1607696384,
+    "pageFaults": {
+      "IORequired": 724244,
+      "IONotRequired": 0
+    },
+    "fsActivity": {
+      "reads": 1788,
+      "writes": 6
+    }
+  },
+  "libuv": [
+  ],
+  "workers": [
+  ],
+  "environmentVariables": {
+    "=C:": "C:\\Users\\ismail.akar\\Desktop\\helper\\helper",
+    "ALLUSERSPROFILE": "C:\\ProgramData",
+    "APPDATA": "C:\\Users\\ismail.akar\\AppData\\Roaming",
+    "ChocolateyInstall": "C:\\ProgramData\\chocolatey",
+    "ChocolateyLastPathUpdate": "132549962106785758",
+    "CHROME_CRASHPAD_PIPE_NAME": "\\\\.\\pipe\\crashpad_3460_YRUPYSYLZFPLLOVJ",
+    "COLOR": "1",
+    "COLORTERM": "truecolor",
+    "CommonProgramFiles": "C:\\Program Files\\Common Files",
+    "CommonProgramFiles(x86)": "C:\\Program Files (x86)\\Common Files",
+    "CommonProgramW6432": "C:\\Program Files\\Common Files",
+    "COMPUTERNAME": "ATEZ018",
+    "ComSpec": "C:\\WINDOWS\\system32\\cmd.exe",
+    "CONNECTOR_URL": "http://[::1]:3000/api/v1-0",
+    "DriverData": "C:\\Windows\\System32\\Drivers\\DriverData",
+    "EDITOR": "notepad.exe",
+    "FPS_BROWSER_APP_PROFILE_STRING": "Internet Explorer",
+    "FPS_BROWSER_USER_PROFILE_STRING": "Default",
+    "GIT_ASKPASS": "c:\\Users\\ismail.akar\\AppData\\Local\\Programs\\Microsoft VS Code\\resources\\app\\extensions\\git\\dist\\askpass.sh",
+    "HOME": "C:\\Users\\ismail.akar",
+    "HOMEDRIVE": "C:",
+    "HOMEPATH": "\\Users\\ismail.akar",
+    "HOST": "localhost",
+    "INIT_CWD": "C:\\Users\\ismail.akar\\Desktop\\helper\\helper",
+    "LANG": "en_GB.UTF-8",
+    "LOCALAPPDATA": "C:\\Users\\ismail.akar\\AppData\\Local",
+    "LOGONSERVER": "\\\\ELMADAG",
+    "NODE": "C:\\Program Files\\nodejs\\node.exe",
+    "NODE_EXE": "C:\\Program Files\\nodejs\\\\node.exe",
+    "NPM_CLI_JS": "C:\\Users\\ismail.akar\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js",
+    "npm_command": "run-script",
+    "npm_config_cache": "C:\\Users\\ismail.akar\\AppData\\Local\\npm-cache",
+    "npm_config_globalconfig": "C:\\Users\\ismail.akar\\AppData\\Roaming\\npm\\etc\\npmrc",
+    "npm_config_init.module": "C:\\Users\\ismail.akar\\.npm-init.js",
+    "npm_config_init_module": "C:\\Users\\ismail.akar\\.npm-init.js",
+    "npm_config_metrics_registry": "https://registry.npmjs.org/",
+    "npm_config_node_gyp": "C:\\Users\\ismail.akar\\AppData\\Roaming\\npm\\node_modules\\npm\\node_modules\\node-gyp\\bin\\node-gyp.js",
+    "npm_config_prefix": "C:\\Users\\ismail.akar\\AppData\\Roaming\\npm",
+    "npm_config_python": "C:\\Users\\ismail.akar\\.windows-build-tools\\python27\\python.exe",
+    "npm_config_scripts_prepend_node_path": "true",
+    "npm_config_userconfig": "C:\\Users\\ismail.akar\\.npmrc",
+    "npm_config_user_agent": "npm/7.5.3 node/v12.16.2 win32 x64",
+    "npm_execpath": "C:\\Users\\ismail.akar\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js",
+    "npm_lifecycle_event": "start:dev",
+    "npm_lifecycle_script": "npm run prestart && node -r dotenv/config -r source-map-support/register .",
+    "npm_node_execpath": "C:\\Program Files\\nodejs\\node.exe",
+    "npm_package_engines_node": ">=10.16",
+    "npm_package_json": "C:\\Users\\ismail.akar\\Desktop\\helper\\helper\\package.json",
+    "npm_package_name": "helper",
+    "npm_package_version": "0.0.1",
+    "NPM_PREFIX_NPM_CLI_JS": "C:\\Users\\ismail.akar\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js",
+    "NUMBER_OF_PROCESSORS": "8",
+    "OneDrive": "C:\\Users\\ismail.akar\\OneDrive",
+    "ORIGINAL_XDG_CURRENT_DESKTOP": "undefined",
+    "OS": "Windows_NT",
+    "Path": "C:\\Users\\ismail.akar\\Desktop\\helper\\helper\\node_modules\\.bin;C:\\Users\\ismail.akar\\Desktop\\helper\\node_modules\\.bin;C:\\Users\\ismail.akar\\Desktop\\node_modules\\.bin;C:\\Users\\ismail.akar\\node_modules\\.bin;C:\\Users\\node_modules\\.bin;C:\\node_modules\\.bin;C:\\Users\\ismail.akar\\AppData\\Roaming\\npm\\node_modules\\npm\\node_modules\\@npmcli\\run-script\\lib\\node-gyp-bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files\\Azure Data Studio\\bin;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Docker\\Docker\\resources\\bin;C:\\ProgramData\\DockerDesktop\\version-bin;C:\\Users\\ismail.akar\\.windows-build-tools\\python27\\;C:\\Users\\ismail.akar\\AppData\\Local\\Programs\\Python\\Python39\\Scripts\\;C:\\Users\\ismail.akar\\AppData\\Local\\Programs\\Python\\Python39\\;C:\\Users\\ismail.akar\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ismail.akar\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files\\Git\\bin;C:\\Users\\ismail.akar\\AppData\\Roaming\\npm;C:\\Program Files\\nodejs;C:\\Users\\ismail.akar\\AppData\\Local\\GitHubDesktop\\bin;C:\\Program Files\\Azure Data Studio\\bin;C:\\Users\\ismail.akar\\.dotnet\\tools;C:\\Users\\ismail.akar\\AppData\\Local\\Microsoft\\WindowsApps;",
+    "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL",
+    "PORT": "5200",
+    "PROCESSOR_ARCHITECTURE": "AMD64",
+    "PROCESSOR_IDENTIFIER": "Intel64 Family 6 Model 142 Stepping 12, GenuineIntel",
+    "PROCESSOR_LEVEL": "6",
+    "PROCESSOR_REVISION": "8e0c",
+    "ProgramData": "C:\\ProgramData",
+    "ProgramFiles": "C:\\Program Files",
+    "ProgramFiles(x86)": "C:\\Program Files (x86)",
+    "ProgramW6432": "C:\\Program Files",
+    "PROMPT": "$P$G",
+    "PROXY_URL": "localhost:3002",
+    "PSModulePath": "C:\\Users\\ismail.akar\\Documents\\WindowsPowerShell\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\PowerShell\\Modules\\",
+    "PUBLIC": "C:\\Users\\Public",
+    "SEC_DATABASE": "SEB2021",
+    "SEC_HOST": "192.168.0.106\\TEST",
+    "SEC_INST": "TEST",
+    "SEC_PASSWORD": "nwH83",
+    "SEC_PORT": "1433",
+    "SEC_USER": "hwn83",
+    "SESSIONNAME": "Console",
+    "SystemDrive": "C:",
+    "SystemRoot": "C:\\WINDOWS",
+    "TEMP": "C:\\Users\\ISMAIL~1.AKA\\AppData\\Local\\Temp",
+    "TERM_PROGRAM": "vscode",
+    "TERM_PROGRAM_VERSION": "1.57.1",
+    "TMP": "C:\\Users\\ISMAIL~1.AKA\\AppData\\Local\\Temp",
+    "USERDNSDOMAIN": "GULERGROUP.COM",
+    "USERDOMAIN": "GULERGROUP",
+    "USERDOMAIN_ROAMINGPROFILE": "GULERGROUP",
+    "USERNAME": "ismail.akar",
+    "USERPROFILE": "C:\\Users\\ismail.akar",
+    "VSCODE_GIT_ASKPASS_MAIN": "c:\\Users\\ismail.akar\\AppData\\Local\\Programs\\Microsoft VS Code\\resources\\app\\extensions\\git\\dist\\askpass-main.js",
+    "VSCODE_GIT_ASKPASS_NODE": "C:\\Users\\ismail.akar\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+    "VSCODE_GIT_IPC_HANDLE": "\\\\.\\pipe\\vscode-git-bdbf4938d6-sock",
+    "windir": "C:\\WINDOWS",
+    "ZES_ENABLE_SYSMAN": "1"
+  },
+  "sharedObjects": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "C:\\WINDOWS\\SYSTEM32\\ntdll.dll",
+    "C:\\WINDOWS\\System32\\KERNEL32.DLL",
+    "C:\\WINDOWS\\System32\\KERNELBASE.dll",
+    "C:\\WINDOWS\\System32\\WS2_32.dll",
+    "C:\\WINDOWS\\System32\\RPCRT4.dll",
+    "C:\\WINDOWS\\System32\\PSAPI.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\dbghelp.dll",
+    "C:\\WINDOWS\\System32\\ADVAPI32.dll",
+    "C:\\WINDOWS\\System32\\ucrtbase.dll",
+    "C:\\WINDOWS\\System32\\msvcrt.dll",
+    "C:\\WINDOWS\\System32\\sechost.dll",
+    "C:\\WINDOWS\\SYSTEM32\\IPHLPAPI.DLL",
+    "C:\\WINDOWS\\System32\\USER32.dll",
+    "C:\\WINDOWS\\SYSTEM32\\USERENV.dll",
+    "C:\\WINDOWS\\System32\\win32u.dll",
+    "C:\\WINDOWS\\System32\\GDI32.dll",
+    "C:\\WINDOWS\\System32\\gdi32full.dll",
+    "C:\\WINDOWS\\System32\\msvcp_win.dll",
+    "C:\\WINDOWS\\System32\\CRYPT32.dll",
+    "C:\\WINDOWS\\System32\\bcrypt.dll",
+    "C:\\WINDOWS\\SYSTEM32\\WINMM.dll",
+    "C:\\WINDOWS\\System32\\IMM32.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\powrprof.dll",
+    "C:\\WINDOWS\\SYSTEM32\\UMPDC.dll",
+    "C:\\WINDOWS\\SYSTEM32\\CRYPTBASE.DLL",
+    "C:\\WINDOWS\\system32\\uxtheme.dll",
+    "C:\\WINDOWS\\System32\\combase.dll",
+    "C:\\WINDOWS\\system32\\mswsock.dll",
+    "C:\\WINDOWS\\SYSTEM32\\kernel.appcore.dll",
+    "C:\\WINDOWS\\System32\\bcryptprimitives.dll",
+    "C:\\WINDOWS\\System32\\NSI.dll",
+    "C:\\WINDOWS\\SYSTEM32\\dhcpcsvc6.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\dhcpcsvc.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\DNSAPI.dll",
+    "C:\\Windows\\System32\\rasadhlp.dll",
+    "C:\\WINDOWS\\System32\\fwpuclnt.dll",
+    "C:\\WINDOWS\\system32\\napinsp.dll",
+    "C:\\WINDOWS\\system32\\pnrpnsp.dll",
+    "C:\\WINDOWS\\system32\\wshbth.dll",
+    "C:\\WINDOWS\\system32\\NLAapi.dll",
+    "C:\\WINDOWS\\System32\\winrnr.dll"
+  ]
+}

@@ -3,6 +3,7 @@
     {
       "type": "node",
       "request": "launch",
+      "env": { "DEBUG": "*" },
       "name": "Launch Program",
       "skipFiles": [
         "<node_internals>/**"

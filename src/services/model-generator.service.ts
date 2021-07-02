@@ -1,5 +1,6 @@
 import {BindingScope, inject, injectable} from '@loopback/core';
 import {HttpErrors} from '@loopback/rest';
+import {WordNinjaService} from '.';
 import {
   InformationSchemaTablesRepository,
   PrimaryColumn,
@@ -8,9 +9,10 @@ import {
 @injectable({scope: BindingScope.TRANSIENT})
 export class ModelGeneratorService {
   constructor(
-    /* Add @inject to inject parameters */
     @inject('repositories.InformationSchemaTablesRepository')
     protected informationSchemaRepository: InformationSchemaTablesRepository,
+    @inject('services.WordNinjaService')
+    protected wordsNinjaService: WordNinjaService,
   ) {}
 
   /*
@@ -22,6 +24,8 @@ export class ModelGeneratorService {
     maximumColumnLength: string,
     isNullable: boolean,
     primaryColumn: Array<PrimaryColumn>,
+    targetLanguage: string,
+    sourceLanguage: string,
   ): Promise<string> {
     let uniqueString = '';
     if (property === 'uniqueidentifier') {
@@ -98,13 +102,26 @@ export class ModelGeneratorService {
     }
     const translate = require('@vitalets/google-translate-api');
     const camelCase = require('camelcase');
-    const translatedColumnName = await translate(columnName, {to: 'en'});
+    let elem = columnName.replace(/\W/g, '');
+    const columnList = (await this.wordsNinjaService
+      .splitSentence(elem, {
+        camelCaseSplitter: false,
+        capitalizeFirstLetter: false,
+        joinWords: false,
+      })
+      .catch(err => {
+        console.log('err', err);
+      })) as [string];
+    elem = columnList.join(' ');
+    const translatedColumnName = await translate(elem, {
+      from: sourceLanguage,
+      to: targetLanguage,
+    });
     if (primaryColumn.some(item => item.ColumnName === columnName)) {
       uniqueString = uniqueString.replace('@id', ', id:true');
     } else {
       uniqueString = uniqueString.replace('@id', '');
     }
-    console.log('tra', translatedColumnName.text);
     const variableName =
       translatedColumnName != null
         ? camelCase(translatedColumnName.text)
@@ -116,7 +133,11 @@ export class ModelGeneratorService {
     return uniqueString;
   }
 
-  async generateModel(tableName: string) {
+  async generateModel(
+    tableName: string,
+    sourceLanguage: string,
+    targetLanguage: string,
+  ) {
     const columnTables = await this.informationSchemaRepository.getColumns(
       tableName,
     );
@@ -136,6 +157,7 @@ export class ModelGeneratorService {
       variableTableName +
       ' extends Entity {\n';
     modelText = modelText.replace('@TableName', tableName);
+    await this.wordsNinjaService.loadDictionary(sourceLanguage);
     for (const column of columnTables) {
       modelText += await this.getNodeEquivelant(
         column.DataType,
@@ -143,6 +165,8 @@ export class ModelGeneratorService {
         column.CharacterMaximumLength ?? '0',
         column.IsNullable ?? true,
         primaryColumn,
+        targetLanguage,
+        sourceLanguage,
       );
     }
     modelText +=
