@@ -29,17 +29,31 @@ export class ModelGeneratorService {
   ): Promise<string> {
     let uniqueString = '';
     if (property === 'uniqueidentifier') {
-      uniqueString =
-        "@property({type:'string' @id @length, mssql: {dataType:'UniqueIdentifier'," +
-        'column: @columnOriginalName},})\n @columnName: string\n\n';
+      uniqueString = `
+        @property({
+          type: 'string',
+          id: true,
+          generated: true,
+          mssql: {
+            dataType: 'UniqueIdentifier',
+            column: @columnOriginalName,
+          },
+        })
+        @columnName: string;
+        `;
       uniqueString = uniqueString.replace(
         '@columnOriginalName',
         "'" + columnName + "'",
       );
     } else if (property === 'bit') {
-      uniqueString =
-        "@property({type:'boolean' @id @length, mssql: {" +
-        'column: @columnOriginalName},})\n @columnName: boolean\n\n';
+      uniqueString = `  @property({
+        type: 'boolean',
+        mssql: {
+          column: @columnOriginalName,
+        },
+      })
+      @columnName: boolean;
+      `;
       uniqueString = uniqueString.replace(
         '@columnOriginalName',
         "'" + columnName + "'",
@@ -52,9 +66,16 @@ export class ModelGeneratorService {
       property === 'ntext' ||
       property === 'char'
     ) {
-      uniqueString =
-        "@property({type:'string' @id @length,  mssql: {" +
-        'column: @columnOriginalName},})\n @columnName: string\n\n';
+      uniqueString = `
+      @property({
+        type: 'string',
+        mssql: {
+          column: @columnOriginalName,
+        },
+      })
+      @columnName: string;
+      `;
+
       uniqueString = uniqueString.replace(
         '@columnOriginalName',
         "'" + columnName + "'",
@@ -67,9 +88,17 @@ export class ModelGeneratorService {
       property === 'money' ||
       property === 'tinyint'
     ) {
-      uniqueString =
-        "@property({type:'number' @id @length,  mssql: {dataType:'@originalType'," +
-        'column: @columnOriginalName},})\n @columnName: number\n\n';
+      uniqueString = `
+      @property({
+        type: 'number',
+        @id @length
+        mssql: {
+          dataType:'@originalType',
+          column: @columnOriginalName,
+        },
+      })
+      @columnName: number;
+      `;
       uniqueString = uniqueString.replace(
         '@columnOriginalName',
         "'" + columnName + "'",
@@ -80,9 +109,17 @@ export class ModelGeneratorService {
       property === 'datetime2' ||
       property === 'datetime'
     ) {
-      uniqueString =
-        "@property({type:'date' @id @length,  mssql: {" +
-        'column: @columnOriginalName},})\n @columnName: Date\n\n';
+      uniqueString = `
+      @property({
+        type: 'date',
+        @id @length
+        mssql: {
+          dataType:'@originalType',
+          column: @columnOriginalName,
+        },
+      })
+      @columnName: Date;
+      `;
       uniqueString = uniqueString.replace(
         '@columnOriginalName',
         "'" + columnName + "'",
@@ -148,15 +185,23 @@ export class ModelGeneratorService {
     if (columnTables === undefined) {
       throw new HttpErrors[404]("Columns couldn't for " + tableName);
     }
-    console.log('t', columnTables);
     const camelCase = require('camelcase');
     const variableTableName = camelCase(tableName, {pascalCase: true});
-    let modelText =
-      "import {Entity, model, property} from '@loopback/repository'; " +
-      "\n@model({   settings: {      mssql: {       table: '@TableName',     },   }, }) \nexport class " +
-      variableTableName +
-      ' extends Entity {\n';
+    let modelText = `
+    import {Entity, model, property} from '@loopback/repository';
+
+    @model({
+      settings: {
+        mssql: {
+          table: '@TableName',
+        },
+      },
+    })
+    export class @variableTableName extends Entity {
+    `;
+
     modelText = modelText.replace('@TableName', tableName);
+    modelText = modelText.replace('@variableTableName', variableTableName);
     await this.wordsNinjaService.loadDictionary(sourceLanguage);
     for (const column of columnTables) {
       modelText += await this.getNodeEquivelant(
